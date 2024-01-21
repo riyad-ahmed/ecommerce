@@ -1,10 +1,13 @@
 import React from 'react';
+import Menu from './Menu';
 
 const Header = () => {
+  const [show, setShow] = React.useState(false);
   return (
     <header class='bg-[#121533] py-4 sm:px-10 px-6 font-[sans-serif] min-h-[70px]'>
       <div class='flex flex-wrap items-center lg:gap-y-2 gap-y-4 gap-x-4'>
-        <a href="add"><img src="https://readymadeui.com/readymadeui-white.svg" alt="logo" class='w-36' />
+        <a href="#" className='text-[40px] font-bold text-[#fff] font-[Righteous]'>
+          OwlKicks
         </a>
         <div class='flex items-center ml-auto lg:order-1'>
           <div class="flex items-center">
@@ -20,7 +23,9 @@ const Header = () => {
             <input type="text" placeholder="Search something..."
               class="bg-gray-50 focus:bg-white w-full px-6 h-10 rounded outline-none text-sm"></input>
           </div>
-          <button id="toggle" class='lg:hidden ml-7'>
+          <button id="toggle" class='lg:hidden ml-7' onClick={() => {
+            setShow(!show);
+          }}>
             <svg class="w-7 h-7" fill="#fff" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd"
                 d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
@@ -28,19 +33,14 @@ const Header = () => {
             </svg>
           </button>
         </div>
-        <ul id="collapseMenu"
-          class='lg:!flex lg:ml-8 max-lg:hidden max-lg:w-full lg:space-x-4 max-lg:space-y-2 max-lg:my-4'>
-          <li class='max-lg:border-b max-lg:py-2 px-3'><a href='add'
-            class='text-[#FFA726] hover:text-[#FFA726] text-[15px] block font-semibold'>New</a></li>
-          <li class='max-lg:border-b max-lg:py-2 px-3'><a href='add'
-            class='text-white hover:text-[#FFA726] text-[15px] block font-semibold'>Men</a></li>
-          <li class='max-lg:border-b max-lg:py-2 px-3'><a href='add'
-            class='text-white hover:text-[#FFA726] text-[15px] block font-semibold'>Women</a></li>
-          <li class='max-lg:border-b max-lg:py-2 px-3'><a href='add'
-            class='text-white hover:text-[#FFA726] text-[15px] block font-semibold'>Kids</a></li>
-          <li class='max-lg:border-b max-lg:py-2 px-3'><a href='add'
-            class='text-white hover:text-[#FFA726] text-[15px] block font-semibold'>Shops</a></li>
-        </ul>
+        {show && (
+          <div class='lg:hidden w-full mt-4'>
+            <Menu />
+          </div>
+        )}
+        <div class='hidden lg:block'>
+          <Menu />
+        </div>
       </div>
     </header>
   );
@@ -48,16 +48,3 @@ const Header = () => {
 };
 
 export default Header;
-
-var toggleBtn = document.getElementById('toggle');
-var collapseMenu = document.getElementById('collapseMenu');
-
-function handleClick() {
-  if (collapseMenu.style.display === 'block') {
-    collapseMenu.style.display = 'none';
-  } else {
-    collapseMenu.style.display = 'block';
-  }
-}
-
-toggleBtn.addEventListener('click', handleClick);
