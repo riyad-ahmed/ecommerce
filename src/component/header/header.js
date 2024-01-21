@@ -4,9 +4,9 @@ import Menu from './Menu';
 const Header = () => {
   const [show, setShow] = React.useState(false);
   return (
-    <header class='bg-[#121533] py-4 sm:px-10 px-6 font-[sans-serif] min-h-[70px]'>
+    <header class='bg-[#121533] py-4 sm:px-10 px-6 font-[sans-serif] min-h-[70px] sm:ml-64'>
       <div class='flex flex-wrap items-center lg:gap-y-2 gap-y-4 gap-x-4'>
-        <a href="#" className='text-[40px] font-bold text-[#fff] font-[Righteous]'>
+        <a href="add" className='text-[40px] font-bold text-[#fff] font-[Righteous]'>
           OwlKicks
         </a>
         <div class='flex items-center ml-auto lg:order-1'>
@@ -38,7 +38,7 @@ const Header = () => {
             <Menu />
           </div>
         )}
-        <div class='hidden lg:block'>
+        <div class='hidden lg:block justify-end'>
           <Menu />
         </div>
       </div>
