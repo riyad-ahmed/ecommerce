@@ -2,55 +2,36 @@ import React from 'react';
 
 const Login = () => {
   return (
-    <div className="relative  flex-col justify-center min-h-screen overflow-hidden hidden">
-      <div className="w-full p-6 m-auto bg-white rounded-md shadow-md lg:max-w-xl">
-        <h1 className="text-3xl font-semibold text-center text-purple-700 underline">
-          Sign in
-        </h1>
-        <form className="mt-6">
-          <div className="mb-2">
-            <label
-              for="email"
-              className="block text-sm font-semibold text-gray-800"
-            >
-              Email
-            </label>
-            <input
-              type="email"
-              className="block w-full px-4 py-2 mt-2 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
-            />
-          </div>
-          <div className="mb-2">
-            <label
-              for="password"
-              className="block text-sm font-semibold text-gray-800"
-            >
-              Password
-            </label>
-            <input
-              type="password"
-              className="block w-full px-4 py-2 mt-2 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
-            />
-          </div>
-          <a href="##" className="text-xs text-purple-600 hover:underline">
-            Forget Password?
-          </a>
-          <div className="mt-6">
-            <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-purple-700 rounded-md hover:bg-purple-600 focus:outline-none focus:bg-purple-600">
-              Login
-            </button>
-          </div>
-        </form>
-
-        <p className="mt-8 text-xs font-light text-center text-gray-700">
-          {" "}
-          Don't have an account?{" "}
-          <a href="##" className="font-medium text-purple-600 hover:underline">
-            Sign up
-          </a>
-        </p>
+    <div class="relative  flex-col justify-center min-h-screen overflow-hidden hidden">
+      <div class="bg-black p-12 h-[100vh]">
+        <div class="max-w-[350px] mx-auto">
+          <img src="{image}" alt="new" />
+          <form>
+            <div class="mb-4">
+              <label for="phone" class="mb-3 block text-base font-medium text-[#fff]">
+                Phone Number
+              </label>
+              <input type="text" name="phone" id="phone" placeholder="Enter your phone number"
+                class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#fff] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+            </div>
+            <p id="helper-text-explanation" class="mt-2 mb-4 text-sm text-gray-500 dark:text-gray-400">We will send you an
+              SMS
+              with a verification code.</p>
+            <button type="submit"
+              class="hover:shadow-form w-full rounded-md border border-[#81898c] text-[#81898c] text-[18px] py-2 px-8 text-center font-semibold hover:text-white hover:border-white duration-300">Send
+              verification code</button>
+            <div>
+              <p class="text-center text-[#fff] mt-4">
+                Create an account?
+                <a href="#" class="text-[#6A64F1] hover:underline">Register</a>
+              </p>
+            </div>
+          </form>
+        </div>
       </div>
+
     </div>
+
   );
 };
 

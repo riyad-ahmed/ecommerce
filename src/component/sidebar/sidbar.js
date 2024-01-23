@@ -15,7 +15,7 @@ const Sidbar = () => {
       <aside id="default-sidebar" class="fixed top-0 left-0 z-40 w-[18rem] h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
         <div class="h-full px-3 py-4 overflow-y-auto bg-[#121533]">
           <div class='text-center'>
-            <a href="add" className='text-[40px] font-bold text-[#fff] font-[Righteous]'>
+            <a href="add" class='text-[40px] font-bold text-[#fff] font-[Righteous]'>
               OwlKicks
             </a>
           </div>
