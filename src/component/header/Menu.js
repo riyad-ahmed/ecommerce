@@ -7,13 +7,13 @@ const Menu = () => {
       <li class='max-lg:border-b max-lg:py-2 px-3'><a href='add'
         class='text-[#FFA726] hover:text-[#FFA726] text-[15px] block font-semibold'>New</a></li>
       <li class='max-lg:border-b max-lg:py-2 px-3'><a href='add'
-        class='text-white hover:text-[#FFA726] text-[15px] block font-semibold'>Men</a></li>
+        class='text-black hover:text-[#FFA726] text-[15px] block font-semibold'>Men</a></li>
       <li class='max-lg:border-b max-lg:py-2 px-3'><a href='add'
-        class='text-white hover:text-[#FFA726] text-[15px] block font-semibold'>Women</a></li>
+        class='text-black hover:text-[#FFA726] text-[15px] block font-semibold'>Women</a></li>
       <li class='max-lg:border-b max-lg:py-2 px-3'><a href='add'
-        class='text-white hover:text-[#FFA726] text-[15px] block font-semibold'>Kids</a></li>
+        class='text-black hover:text-[#FFA726] text-[15px] block font-semibold'>Kids</a></li>
       <li class='max-lg:border-b max-lg:py-2 px-3'><a href='add'
-        class='text-white hover:text-[#FFA726] text-[15px] block font-semibold'>Shops</a></li>
+        class='text-black hover:text-[#FFA726] text-[15px] block font-semibold'>Shops</a></li>
     </ul>
   );
 };
