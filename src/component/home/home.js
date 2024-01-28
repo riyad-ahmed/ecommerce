@@ -1,15 +1,16 @@
 import React from 'react';
-import Card from './card';
-import Recommented from '../../Recommented';
 
-const Home = () => {
+import Recommented from '../../Recommented';
+import Products from '../../products';
+
+const Home = ({ handleClick, result }) => {
   return (
     <div className='sm:ml-[18rem] p-4'>
-      <Recommented />
+      <Recommented handleClick={handleClick} />
       <div className='grid grid-cols-4 gap-4 mb-4'>
-        {[...Array(10)].map((_, i) => (
-          <Card key={i} />
-        ))}
+
+
+        <Products result={result} />
       </div>
     </div>
   );

@@ -4,13 +4,13 @@ import './index.css';
 import Header from './component/header/header';
 import Home from './component/home/home';
 import Sidbar from './component/sidebar/sidbar';
-import Products from './db/data.js';
+import Data from './db/data.js';
 import Card from './component/home/card.js';
 
 
 const App = () => {
 
-  const [selectedCategory, setSelectedCategory] = useState('null');
+  const [selectedCategory, setSelectedCategory] = useState('');
   const [query, setQuery] = useState('');
 
   // ------Input filter---------
@@ -22,7 +22,7 @@ const App = () => {
 
   // ------Category filter---------
 
-  const filteredItems = Products.filter((Product) =>
+  const filteredItems = Data.filter((Product) =>
     Product.title.toLowerCase().indexOf(query.toLowerCase() !== -1)
   );
 
@@ -38,8 +38,8 @@ const App = () => {
     setSelectedCategory(event.target.value);
   };
 
-  function filterData(products, selected, query) {
-    let filteredProducts = Products;
+  function filterData(data, selected, query) {
+    let filteredProducts = data;
 
     // filtaring input items
     if (query) {
@@ -57,29 +57,27 @@ const App = () => {
           newPrice === selected
       );
     }
-    return filteredProducts.map(({ img, title, star, reviews, newPrice, prevPrice }) => (
-      <Card
-        key={Math.random()}
-        img={img}
-        title={title}
-        star={star}
-        reviews={reviews}
-        newPrice={newPrice}
-        prevPrice={prevPrice}
-      />
-    ));
+    return filteredProducts;
 
   }
 
 
-  const result = filterData(Products, selectedCategory, query);
+  const result = filterData(
+    Data, selectedCategory, query);
+  console.log('result', result)
+
+  // ------Add to card-------
+  const addToCard = (event) => {
+    console.log('add to card', event.target.value)
+  }
 
   return (
     <div>
       <Sidbar handleChange={handleChange} />
       <Login />
-      <Header />
-      <Home />
+      <Header query={query} handleInputChange={handleInputChange} />
+      <Home result={result} handleClick={addToCard} />
+      {/* <Products result={result} /> */}
     </div>
   );
 };

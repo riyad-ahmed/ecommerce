@@ -38,17 +38,6 @@ const Colors = ({ handleChange }) => {
           name="test1"
           color='green'
         />
-        <label className=''>
-          <Input
-            onChange={handleChange}
-            type="radio"
-            value="white"
-            name="test2"
-          />
-          <span></span> White
-        </label>
-
-
       </div>
     </div>
   );
