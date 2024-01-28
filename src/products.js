@@ -3,7 +3,6 @@ import Card from "./component/home/card";
 
 
 const Products = ({ result }) => {
-  console.log(result);
   return (
     <>
       {/* <section className="card-container">{result}</section> */}
