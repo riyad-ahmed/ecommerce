@@ -3,3 +3,23 @@
 @tailwind utilities;
 
 
+/* .all{
+  background:liineearr-gradient(blue,crimson);
+}
+.checkmark{
+  position:absolute;
+  top:0;
+  left:0;
+  width:25px;
+  height:25px;
+  background-color:#eee;
+  border-radius: 50%;
+}
+
+.input:hover input ~ .checkmark{
+  background-color:#ccc;
+}
+
+.input input:checked ~ .checkmark{
+  background-color:#2196F3;
+} */

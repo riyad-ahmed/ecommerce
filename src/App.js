@@ -4,8 +4,8 @@ import './index.css';
 import Header from './component/header/header';
 import Home from './component/home/home';
 import Sidbar from './component/sidebar/sidbar';
-// import Products from './db/data.js';
-import card from './component/home/card';
+import Products from './db/data.js';
+import Card from './component/home/card.js';
 
 
 const App = () => {
@@ -23,20 +23,20 @@ const App = () => {
   // ------Category filter---------
 
   const filteredItems = Products.filter((Product) =>
-    Product.toLocaleLowerCase().indexOf(query.toLowerCase() !== -1)
+    Product.title.toLowerCase().indexOf(query.toLowerCase() !== -1)
   );
 
   // --------redio filter-------
 
-  const handleChange = event => {
-    setSelectedCategory(event.target.value)
+  const handleChange = (event) => {
+    setSelectedCategory(event.target.value);
   };
 
   // ------Button filter-------
 
-  const handleClick = event => {
-    setSelectedCategory(event.target.value)
-  }
+  const handleClick = (event) => {
+    setSelectedCategory(event.target.value);
+  };
 
   function filterData(products, selected, query) {
     let filteredProducts = Products;
@@ -58,7 +58,7 @@ const App = () => {
       );
     }
     return filteredProducts.map(({ img, title, star, reviews, newPrice, prevPrice }) => (
-      <card
+      <Card
         key={Math.random()}
         img={img}
         title={title}
@@ -72,10 +72,11 @@ const App = () => {
   }
 
 
+  const result = filterData(Products, selectedCategory, query);
 
   return (
     <div>
-      <Sidbar />
+      <Sidbar handleChange={handleChange} />
       <Login />
       <Header />
       <Home />
