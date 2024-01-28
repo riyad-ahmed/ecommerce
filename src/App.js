@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Login from './component/login';
 import './index.css';
 import Header from './component/header/header';
@@ -12,18 +12,30 @@ const App = () => {
 
   const [selectedCategory, setSelectedCategory] = useState('');
   const [query, setQuery] = useState('');
+  const [data, setdata] = useState([])
+
+
+  useEffect(() => {
+    console.log('selectedCategory', selectedCategory)
+    setdata(Data);
+  }
+    , [selectedCategory])
 
   // ------Input filter---------
 
 
   const handleInputChange = (event) => {
     setQuery(event.target.value);
+    filterData(
+      Data, selectedCategory, query);
   };
 
   // ------Category filter---------
 
-  const filteredItems = Data.filter((Product) =>
-    Product.title.toLowerCase().indexOf(query.toLowerCase() !== -1)
+  const filteredItems = Data.filter((Product) => {
+    const product = Product.title.toLowerCase().indexOf(query.toLowerCase()) != -1;
+    return product;
+  }
   );
 
   // --------redio filter-------
@@ -47,6 +59,7 @@ const App = () => {
     }
 
     if (selected) {
+
       filteredProducts = filteredProducts.filter(
         ({ category, color, company, title, newPrice }) =>
 
@@ -57,6 +70,7 @@ const App = () => {
           newPrice === selected
       );
     }
+
     return filteredProducts;
 
   }
@@ -64,9 +78,6 @@ const App = () => {
 
   const result = filterData(
     Data, selectedCategory, query);
-  console.log('result', result)
-
-  // ------Add to card-------
   const addToCard = (event) => {
     console.log('add to card', event.target.value)
   }
@@ -76,7 +87,7 @@ const App = () => {
       <Sidbar handleChange={handleChange} />
       <Login />
       <Header query={query} handleInputChange={handleInputChange} />
-      <Home result={result} handleClick={addToCard} />
+      <Home result={result} handleClick={handleClick} />
       {/* <Products result={result} /> */}
     </div>
   );

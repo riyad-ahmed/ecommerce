@@ -9,8 +9,9 @@ const Products = ({ result }) => {
 
       {/* img, title, star, reviews, newPrice, prevPrice */}
 
-      {result.map((item) => {
+      {result.map((item, i) => {
         return <Card
+          key={i}
           img={item.img}
           title={item.title}
           star={item.star}

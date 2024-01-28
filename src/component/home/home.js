@@ -4,6 +4,7 @@ import Recommented from '../../Recommented';
 import Products from '../../products';
 
 const Home = ({ handleClick, result }) => {
+
   return (
     <div className='sm:ml-[18rem] p-4'>
       <Recommented handleClick={handleClick} />
