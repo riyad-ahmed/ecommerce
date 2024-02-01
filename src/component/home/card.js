@@ -4,7 +4,7 @@ import { BsFillBagFill } from "react-icons/bs";
 const Card = ({ img, title, star, reviews, newPrice, prevPrice }) => {
   return (
     <>
-      <section className="relative flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md">
+      <section className="relative flex w-full flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md">
         <a href="#" className='relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl'>
           <img src={img} alt={title} className="card-img" />
         </a>
