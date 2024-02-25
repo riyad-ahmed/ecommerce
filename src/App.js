@@ -86,6 +86,7 @@ const App = () => {
     <div>
       <Sidbar handleChange={handleChange} />
       <Login />
+      
       <Header query={query} handleInputChange={handleInputChange} />
       <Home result={result} handleClick={handleClick} />
       {/* <Products result={result} /> */}
