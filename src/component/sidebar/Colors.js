@@ -40,6 +40,8 @@ const Colors = ({ handleChange }) => {
         />
       </div>
     </div>
+
+    
   );
 };
 
