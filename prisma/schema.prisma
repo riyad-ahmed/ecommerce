@@ -1,0 +1,19 @@
+export DATABASE_URL="mongodb://localhost:27017/mydatabase"
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id    Int     @id @map("_id")
+  email String  @unique
+}
+
+model Post {
+  id        Int     @id @map("_id")
+  title     String
+}

@@ -10,6 +10,8 @@ import Card from './component/home/card.js';
 
 const App = () => {
 
+  const uri = "mongodb+srv://riyadahmed:12345@cluster0.w7qo8el.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+
   const [selectedCategory, setSelectedCategory] = useState('');
   const [query, setQuery] = useState('');
   const [data, setdata] = useState([])
